@@ -177,7 +177,6 @@ def training(story_draft, scores, user_input):
     """
     while True:
         if weighted_reward(scores) >= 0.8:
-            print("Broke out of while loop")
             break
         story_draft = call_model(prompt, max_tokens=MAX_TOKENS, temperature=TEMPERATURE)
         judge_score = judge_story(story_draft)
@@ -199,8 +198,6 @@ def main():
                 break
     # Judge scores the story
     judge_score = judge_story(story)
-    print("Score in the first try")
-    print(judge_score)
     # Convert the scores into Pydantic format
     scores = JudgeScores(**json.loads(judge_score))
     # Calculate the total score based on different criteria
@@ -214,7 +211,6 @@ def main():
         print("Entered training loop")
         story_updated, scores = training(story, scores, user_input)
         print("After training")
-        print(scores)
         print(story_updated)
 
 INPUT_PATH = "Input.xlsx"
