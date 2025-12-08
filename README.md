@@ -11,7 +11,7 @@ improvement of the story.
 3. python3 updated_main.py
 
 ## Approach
-I was inspired by the Generative Adversarial Network (GAN) framework to create a judge that critiques the generator. I have a generator LLM, powered by ChatGPT-3.5-turbo, that creates a bedtime story for kids ages 5-10. The judge LLM critiques the story based on the following criteria: age fit, warmth, creativity, coherence, and safety. I sum these weighted scores and if the final score is below 80%, then there is a training loop where the story is improved by providing the story draft, judge's feedback, and the user input. 
+I was inspired by the Generative Adversarial Network (GAN) framework to create a judge that critiques the generator. I have a generator LLM, powered by ChatGPT-3.5-turbo, that creates a bedtime story for kids ages 5-10. The judge LLM critiques the story based on the following criteria: age fit, warmth, creativity, coherence, and safety. I sum these weighted scores and if the final score is below 80%, then there is a training loop where the story is improved upon by providing the story draft, judge's feedback, and the user input. 
 
 The weights are assigned as the following:
 {
