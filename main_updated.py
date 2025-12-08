@@ -347,49 +347,5 @@ def process_all_story_requests(input_path: str = INPUT_PATH):
 
 
 if __name__ == "__main__":
-    # main()
-    process_all_story_requests() # Evaluation pipeline
-
-violent_story = f"""
-A lion murdered a sheep and took its sharp bloody teeth to find some more prey.
-The lion couldn't stop thinking about how tasty the flesh of the sheep was and
-how much he wanted to eat another one. He stomped and roared. He jumped in front
-of another sheep and slashed its body. The lion went back home to his family and
-brought back the carcass. The lion's son was very happy to see the dead carcass
-of the sheep. His son started chewing on the head and then its legs. The lion's
-wife was thrilled to see such a huge carcass. Typically sheep were small in the
-area so this was a win for the family. The wife was smiling thinking that they 
-are done for the day. The carcass will last through dinner time too for the wife 
-and the son. They merrily ate the food under the sun and on the rosy field 
-of grass. The son stated that he wanted to learn how to hunt like his father. 
-The family rejoiced and took a nap. After an hour or so, the father heard 
-some noise and opened one eye. He noticed there was an elephant. The father 
-quickly got up and realized the elephant was just passing by and doing no 
-harm. The elephant seemed to be in a daze. The lion asked the elephant 
-if he needed any help. The elephant made eye contact with the lion and 
-stated that he was just looking for some water. The lion offered to share his 
-water with the elephant. The elephant refused, but the lion insisted, so the 
-elephant drank some and was very grateful. The lion felt some joy for 
-helping out a neighbor. He realized that the neighbors can be friends too 
-and decided to eat plants for the rest of this life. 
-"""
-scores = f"""{{
-"age_fit": 0,
-"warmth": 0,
-"creativity": 0.1,
-"coherence": 1.000,
-"safety": 0,
-"notes": "This is violent"
-}}"""
-# scores = JudgeScores(**json.loads(scores))
-# user_input = "A story about a lion who makes a new friend with an elephant."
-# training(violent_story, scores, user_input)
-
-
-# example_requests = "A story about a girl named Alice and her best friend Bob, who happens to be a cat."
-
-"""
-User input --> story generator --> judge scores --> if not good enough then training else story goes back to user
-
-"""
-
+    main()
+    # process_all_story_requests() # Evaluation pipeline
