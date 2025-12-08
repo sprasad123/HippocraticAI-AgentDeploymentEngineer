@@ -22,7 +22,7 @@ The weights for each dimension are assigned as the following:
     "safety": 0.10
 }
 
-If the total weighted score falls below 0.80, the system enters a training loop, where the story is regenerated using the original draft, judge feedback, and the user's initial story request. This loop continues until the story meets or exceeds the quality threshold.
+If the total weighted score falls below 0.80, the system enters a training loop, where the story is regenerated using the original draft, judge feedback, and the user's initial story request. This loop continues until the story meets or exceeds the quality threshold. The diagram below shows the user-generator-judge workflow.
 
 <img width="2126" height="738" alt="image" src="https://github.com/user-attachments/assets/edd68e95-71e8-44bc-b07c-3feb0b07f7ce" />
 
