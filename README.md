@@ -11,9 +11,9 @@ improvement of the story.
 3. python3 updated_main.py
 
 ## Approach
-I was inspired by the Generative Adversarial Network (GAN) framework to create a judge that critiques the generator. I have a generator LLM, powered by ChatGPT-3.5-turbo, that creates a bedtime story for kids ages 5-10. The judge LLM critiques the story based on the following criteria: age fit, warmth, creativity, coherence, and safety. I sum these weighted scores and if the final score is below 80%, then there is a training loop where the story is improved upon by providing the story draft, judge's feedback, and the user input. 
+This project takes inspiration from the Generative Adversarial Network (GAN) paradigm, where a generator produces content and a critic evaluates it. Here, the generator is a large language model (ChatGPT-3.5-turbo) that creates bedtime stories. The judge is a separate LLM that scores each story along the below five dimensions.
 
-The weights are assigned as the following:
+The weights for each dimension are assigned as the following:
 {
     "age_fit": 0.30,
     "warmth": 0.20,
@@ -22,15 +22,19 @@ The weights are assigned as the following:
     "safety": 0.10
 }
 
-The bedtime story application is fairly straightforward, so I designed the judge LLM to be harsh and judgmental because the generator LLM is already good. In the future, we could consider making a more complex or nuanced story that is harder to generate.
+If the total weighted score falls below 0.80, the system enters a training loop, where the story is regenerated using the original draft, judge feedback, and the user's initial story request. This loop continues until the story meets or exceeds the quality threshold.
+
+<img width="2126" height="738" alt="image" src="https://github.com/user-attachments/assets/edd68e95-71e8-44bc-b07c-3feb0b07f7ce" />
+
+A temperature of 0.9 was used for story generation and improvement. This higher temperature produced more imaginative, expressive stories with stronger character personality and narrative richness.
+
+The bedtime story application is fairly straightforward, and, thus, the judge LLM is designed to be harsh and judgmental because the generator LLM is already good. Future extensions could explore more nuanced or complex narratives that challenge the generator further.
 
 ## Evaluation
 
 The evaluation results are shown in the file "Evaluation.csv".
 
-I ran the generator-judge flow across 25 user inputs, where the last 5 were not age appropriate requests. We can see the scoring across age fit, warmth, creativity, coherence, and safety for the first version of the story and also for the last version of the story. The last column shows the final story text. We can notice that the flow entered the training loop in row 19 where the original story had a score of 72%, and after being improved upon, it resulted in a final score of 96%. 
-
-I kept the temperature value to 0.9 for generating or improving the story. This resulted in more creative stories with specific aspects to the character's personality. The stories with this temperature typically read more interestingly and could keep users engaged. 
+I ran the full generator-judge workflow across 25 user inputs, where the last 5 were deliberately age inappropriate requests. For each request, the CSV records: the initial and final judge scores, a comparison of all five scoring dimensions, and the final story text. A notable example is Row 19, where the original story scored 72%, triggering the training loop. After refinement, the final story achieved a score of 96%. 
 
 ## Wishlist
 
@@ -39,8 +43,8 @@ Before submitting the assignment, describe here in a few sentences what you woul
 I would make the story generation process more interactive, where the chatbot asks the user questions about how they would like the story to turn out.
 
 Wishlist (for later on):
-1. Incorporating a text to voice feature so that the user can have the story being read aloud to them. 
+1. Incorporating a text-to-voice feature so that the user can have the story being read aloud to them. 
 2. Giving the characters specific, crafted personalities, by giving a few examples in the prompt.
 3. Introducing a human judge to score. 
 4. Fine-tuning after gathering enough data.
-5. Explore other models, such as Gemini, Claude, Perplexity
+5. Explore other models, such as Gemini, Claude, and/or Perplexity.
