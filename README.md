@@ -8,7 +8,7 @@ improvement of the story.
 
 2. export OPENAI_API_KEY=“Enter your OpenAI API key here”
 
-3. python3 updated_main.py
+3. python3 main_updated.py
 
 ## Approach
 This project takes inspiration from the Generative Adversarial Network (GAN) paradigm, where a generator produces content and a critic evaluates it. Here, the generator is a large language model (ChatGPT-3.5-turbo) that creates bedtime stories. The judge is a separate LLM that scores each story along the below five dimensions.
