@@ -9,17 +9,17 @@ import pandas as pd
 Before submitting the assignment, describe here in a few sentences what you would have 
 built next if you spent 2 more hours on this project:
 
-I would make the story generation process more interactive, where the chatbot asks the 
-user questions about how they would like the story to turn out.
+I would make the story generation process more interactive, where the chatbot asks 
+the user questions about how they would like the story to turn out.
 
 Wishlist (for later on):
-1. Incorporating a text to voice feature so that the user can have the story being read 
-aloud to them. 
-2. Giving the characters specific, crafted personalities, by giving a few examples in
-the prompt.
-3. Introducing a human judge to score. 
+
+1. Incorporating a text-to-voice feature so that the user can have the story being 
+read aloud to them.
+2. Giving the characters specific, crafted personalities, by giving a few examples in the prompt.
+3. Introducing a human judge to score.
 4. Fine-tuning after gathering enough data.
-5. Explore other models, such as Gemini, Claude, Perplexity
+5. Explore other models, such as Gemini, Claude, and/or Perplexity.
 """
 
 # Configuration
@@ -212,6 +212,8 @@ def main():
         story_updated, scores = training(story, scores, user_input)
         print("After training")
         print(story_updated)
+
+# Evaluation pipeline
 
 INPUT_PATH = "Input.xlsx"
 EVAL_PATH = "Evaluation.csv"
