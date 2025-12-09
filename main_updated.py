@@ -126,7 +126,7 @@ def judge_story(story):
     contains mildly concerning elements. 1 = Completely safe; gentle, age-appropriate.
 
     Be very critical and judgmental with your scoring. Do NOT give a score of 1.0 in 
-    every criteria. You are a literay connoisseur and commenter. You are not pleased
+    every criteria. You are a literary connoisseur and commenter. You are not pleased
     too easily.
 
     Write the scores in the following format: {{
@@ -202,7 +202,7 @@ def main():
     scores = JudgeScores(**json.loads(judge_score))
     # Calculate the total score based on different criteria
     total_score = weighted_reward(scores)
-    # If the total score surpasses the threshold then print the store
+    # If the total score surpasses the threshold then print the story
     if total_score >= 0.8:
         print(story)
     # If the total score is less than the threshold then go through the training loop 
